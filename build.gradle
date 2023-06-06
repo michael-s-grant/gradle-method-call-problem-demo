@@ -1,0 +1,20 @@
+group = "uk.me.michaelgrant"
+version = "0.0.1-SNAPSHOT"
+
+repositories {
+  mavenCentral()
+}
+
+ext.kotlinVersion = "1.8.20"
+
+def kotlinModule(String name) {
+  "org.jetbrains.kotlin:kotlin-$name:$kotlinVersion"
+}
+
+kotlin {
+  jvmToolchain(17)
+}
+
+dependencies {
+  kotlinScriptImplementation(kotlinModule("stdlib"))
+}
